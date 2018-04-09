@@ -176,6 +176,12 @@ pipeline {
           }
         }
       }
+      stage('etching fingerprint') {
+        steps {
+          sh 'echo \'start build\''
+          echo 'build done'
+        }
+      }
     }
 
   }
