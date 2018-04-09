@@ -8,9 +8,18 @@ pipeline {
       }
     }
     stage('test') {
-      steps {
-        sh 'echo \'start build\''
-        echo 'build done'
+      parallel {
+        stage('test') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('test1') {
+          steps {
+            echo 'helloworld'
+          }
+        }
       }
     }
     stage('deploy') {
