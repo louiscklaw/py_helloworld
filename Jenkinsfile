@@ -18,7 +18,7 @@ pipeline {
       }
     }
 
-    stage('voice commands/functionaires') {
+    stage('voice facities') {
       parallel{
         stage('CALL CONTROL COMMANDS') {
           steps {
@@ -53,7 +53,7 @@ pipeline {
       }
     }
 
-    stage('data commands/functionaires') {
+    stage('data facities') {
       parallel{
         stage('DATA AT COMMANDS') {
           steps {
@@ -88,7 +88,7 @@ pipeline {
       }
     }
 
-    stage('supplementry commands/functionaires') {
+    stage('supplementry facities') {
       parallel{
         stage('NETWORK SERVICE RELATED COMMANDS') {
           steps {
@@ -129,18 +129,7 @@ pipeline {
       }
     }
 
-    stage('debug commands'){
-      parallel{
-        stage('NV COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-      }
-    }
-
-    stage('IOT commands/functionaires') {
+    stage('IOT facities') {
       parallel{
         stage('AVMS COMMANDS') {
           steps {
@@ -149,6 +138,17 @@ pipeline {
           }
         }
         stage('M2M SERVICE OPTIMIZATION COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+      }
+    }
+
+    stage('debug commands'){
+      parallel{
+        stage('NV COMMANDS') {
           steps {
             sh 'echo \'start build\''
             echo 'build done'
