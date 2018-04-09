@@ -1,14 +1,29 @@
 pipeline {
   agent any
   stages {
-    stage('build') {
-      steps {
-        sh 'echo \'start build\''
-        echo 'build done'
+    parallel{
+      stage('build') {
+        steps {
+          sh 'echo \'start build\''
+          echo 'build done'
+        }
+      }
+      stage('prepare test setup') {
+        steps {
+          sh 'echo \'start prepare test setup\''
+          echo 'prepare test setup done'
+        }
+      }
+      stage('get the FW binary') {
+        steps {
+          sh 'echo \'start get the FW binary\''
+          echo 'get the FW binary done'
+        }
       }
     }
     stage('test') {
-        stage('test') {
+      parallel {
+        stage('functional') {
           steps {
             sh 'echo \'start build\''
             echo 'build done'
@@ -19,7 +34,7 @@ pipeline {
             echo 'helloworld'
           }
         }
-
+      }
     }
     stage('deploy') {
       steps {
