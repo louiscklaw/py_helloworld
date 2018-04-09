@@ -17,6 +17,7 @@ pipeline {
         }
       }
     }
+
     stage('voice commands/functionaires') {
       parallel{
         stage('CALL CONTROL COMMANDS') {
@@ -51,6 +52,7 @@ pipeline {
         }
       }
     }
+
     stage('data commands/functionaires') {
       parallel{
         stage('DATA AT COMMANDS') {
@@ -85,6 +87,7 @@ pipeline {
         }
       }
     }
+
     stage('supplementry commands/functionaires') {
       parallel{
         stage('NETWORK SERVICE RELATED COMMANDS') {
@@ -125,6 +128,7 @@ pipeline {
         }
       }
     }
+
     stage('debug commands'){
       parallel{
         stage('NV COMMANDS') {
@@ -153,11 +157,16 @@ pipeline {
       }
     }
 
-    stage('deploy') {
-      steps {
-        sh 'echo \'start build\''
-        echo 'build done'
+    stage('palletize') {
+      parallel{
+        stage('archiving binary') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
       }
     }
+
   }
 }
