@@ -61,12 +61,6 @@ pipeline {
             echo 'build done'
           }
         }
-        stage('AVMS COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
         stage('LOCATION SERVICE COMMANDS') {
           steps {
             sh 'echo \'start build\''
@@ -128,6 +122,16 @@ pipeline {
           }
         }
         stage('DATA AT COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+      }
+    }
+    stage('IOT commands/functionaires') {
+      parallel{
+        stage('AVMS COMMANDS') {
           steps {
             sh 'echo \'start build\''
             echo 'build done'
