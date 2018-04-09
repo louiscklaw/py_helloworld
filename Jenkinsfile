@@ -91,24 +91,9 @@ pipeline {
             echo 'build done'
           }
         }
-        stage('CALL CONTROL COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-        stage('MOBILE EQUIPMENT CONTROL AND STATUS COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-        stage('NETWORK SERVICE RELATED COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
+
+
+
         stage('PHONE BOOK MANAGEMENT') {
           steps {
             sh 'echo \'start build\''
@@ -121,6 +106,21 @@ pipeline {
             echo 'build done'
           }
         }
+
+      }
+    }
+    stage('voice commands/functionaires') {
+      parallel{
+        stage('CALL CONTROL COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+      }
+    }
+    stage('data commands/functionaires') {
+      parallel{
         stage('DATA AT COMMANDS') {
           steps {
             sh 'echo \'start build\''
@@ -129,16 +129,28 @@ pipeline {
         }
       }
     }
-    stage('test parallel'){
+    stage('supplementry commands/functionaires') {
       parallel{
-        stage('IOT commands/functionaires') {
-          parallel{
-            stage('AVMS COMMANDS') {
-              steps {
-                sh 'echo \'start build\''
-                echo 'build done'
-              }
-            }
+        stage('NETWORK SERVICE RELATED COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('MOBILE EQUIPMENT CONTROL AND STATUS COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+      }
+    }
+    stage('IOT commands/functionaires') {
+      parallel{
+        stage('AVMS COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
           }
         }
       }
