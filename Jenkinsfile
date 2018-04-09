@@ -8,7 +8,6 @@ pipeline {
       }
     }
     stage('test') {
-      parallel {
         stage('test') {
           steps {
             sh 'echo \'start build\''
@@ -20,7 +19,7 @@ pipeline {
             echo 'helloworld'
           }
         }
-      }
+
     }
     stage('deploy') {
       steps {
