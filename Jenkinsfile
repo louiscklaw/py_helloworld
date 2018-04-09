@@ -3,18 +3,28 @@ pipeline {
   stages {
     stage('build') {
       parallel{
+
         stage('prepare test setup') {
           steps {
             sh 'echo \'start prepare test setup\''
             echo 'prepare test setup done'
           }
         }
+
         stage('prepare FW binary') {
           steps {
             sh 'echo \'start get the FW binary\''
             echo 'get the FW binary done'
           }
         }
+
+        stage('prepare dump/trace') {
+          steps {
+            sh 'echo \'start get the FW binary\''
+            echo 'get the FW binary done'
+          }
+        }
+
       }
     }
 
