@@ -9,68 +9,12 @@ pipeline {
             echo 'prepare test setup done'
           }
         }
-        stage('get the FW binary') {
+        stage('prepare FW binary') {
           steps {
             sh 'echo \'start get the FW binary\''
             echo 'get the FW binary done'
           }
         }
-      }
-    }
-    stage('test') {
-      parallel {
-        stage('GPRS AT COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-        stage('SIM APPLICATION TOOLKIT AT COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-        stage('AUDIO COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-        stage('PROTOCOL SPECIFIC COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-        stage('SPECIFIC FLASH COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-        stage('ECALL COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-
-        stage('LOCATION SERVICE COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-
-
-
-
-
-
-
-
-
       }
     }
     stage('voice commands/functionaires') {
@@ -88,6 +32,18 @@ pipeline {
           }
         }
         stage('V25TER AT COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('ECALL COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('AUDIO COMMANDS') {
           steps {
             sh 'echo \'start build\''
             echo 'build done'
@@ -115,6 +71,18 @@ pipeline {
             echo 'build done'
           }
         }
+        stage('PROTOCOL SPECIFIC COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('GPRS AT COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
       }
     }
     stage('supplementry commands/functionaires') {
@@ -132,6 +100,24 @@ pipeline {
           }
         }
         stage('DSDS COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('LOCATION SERVICE COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('SPECIFIC FLASH COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('SIM APPLICATION TOOLKIT AT COMMANDS') {
           steps {
             sh 'echo \'start build\''
             echo 'build done'
