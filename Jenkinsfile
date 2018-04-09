@@ -169,6 +169,12 @@ pipeline {
 
     stage('palletize') {
       parallel{
+        stage('upload result') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
         stage('archiving binary') {
           steps {
             sh 'echo \'start build\''
