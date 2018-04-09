@@ -25,6 +25,13 @@ pipeline {
           }
         }
 
+        stage('updating test sets') {
+          steps {
+            sh 'echo \'start get the FW binary\''
+            echo 'get the FW binary done'
+          }
+        }
+
       }
     }
 
