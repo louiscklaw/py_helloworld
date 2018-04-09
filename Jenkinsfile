@@ -129,16 +129,21 @@ pipeline {
         }
       }
     }
-    stage('IOT commands/functionaires') {
+    stage('test parallel'){
       parallel{
-        stage('AVMS COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
+        stage('IOT commands/functionaires') {
+          parallel{
+            stage('AVMS COMMANDS') {
+              steps {
+                sh 'echo \'start build\''
+                echo 'build done'
+              }
+            }
           }
         }
       }
     }
+
     stage('deploy') {
       steps {
         sh 'echo \'start build\''
