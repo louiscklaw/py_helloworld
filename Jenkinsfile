@@ -55,57 +55,21 @@ pipeline {
             echo 'build done'
           }
         }
-        stage('DSDS COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
+
         stage('LOCATION SERVICE COMMANDS') {
           steps {
             sh 'echo \'start build\''
             echo 'build done'
           }
         }
-        stage('V25TER AT COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-        stage('NV COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-        stage('M2M SERVICE OPTIMIZATION COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-        stage('GENERAL AT COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
 
 
 
-        stage('PHONE BOOK MANAGEMENT') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
-        stage('SMS AT COMMANDS') {
-          steps {
-            sh 'echo \'start build\''
-            echo 'build done'
-          }
-        }
+
+
+
+
+
 
       }
     }
@@ -117,11 +81,35 @@ pipeline {
             echo 'build done'
           }
         }
+        stage('GENERAL AT COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('V25TER AT COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
       }
     }
     stage('data commands/functionaires') {
       parallel{
         stage('DATA AT COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('SMS AT COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('PHONE BOOK MANAGEMENT') {
           steps {
             sh 'echo \'start build\''
             echo 'build done'
@@ -143,11 +131,34 @@ pipeline {
             echo 'build done'
           }
         }
+        stage('DSDS COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
       }
     }
+    stage('debug commands'){
+      parallel{
+        stage('NV COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+      }
+    }
+
     stage('IOT commands/functionaires') {
       parallel{
         stage('AVMS COMMANDS') {
+          steps {
+            sh 'echo \'start build\''
+            echo 'build done'
+          }
+        }
+        stage('M2M SERVICE OPTIMIZATION COMMANDS') {
           steps {
             sh 'echo \'start build\''
             echo 'build done'
